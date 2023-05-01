@@ -1,20 +1,18 @@
-import { Button, ButtonGroup } from "@mui/material";
 import { theme } from "./Theme/Theme";
-import { ThemeProvider } from "@mui/material";
+import { Container, ThemeProvider } from "@mui/material";
+import Header from "./Components/Header";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <h1 className='font-bold text-2xl'>TEEEST</h1>
-        <ButtonGroup className="flex flex-col w-1/3" variant="contained" aria-label="outlined primary button group">
-          <Button>One</Button>
-          <Button>Two</Button>
-          <Button>Three</Button>
-        </ButtonGroup>
-      </div>
-    </ThemeProvider>
-    
+    <>
+      <ThemeProvider theme={theme}>
+        <Header />
+        <Container sx={{mt: 10}}>
+          <Outlet />
+        </Container>
+      </ThemeProvider>
+    </>
   );
 }
 
