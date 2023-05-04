@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { AppBar, Button, Container, IconButton, SwipeableDrawer, Toolbar, Typography, Box, Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
+import { AppBar, Container, IconButton, SwipeableDrawer, Toolbar, Typography, Box, Divider, List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu'
 import { ChevronRightOutlined } from '@mui/icons-material';
 import { NavLink, useLocation } from 'react-router-dom';
@@ -12,12 +12,20 @@ const navItems = [
         label: 'Startseite'
     },
     {
-        link: '/about',
-        label: 'Über'
-    },
-    {
         link: '/checklist',
         label: 'PTB Checkliste'
+    },
+    {
+        link: '/ganttgen',
+        label: 'Zeitplan-Generator'
+    },
+    {
+        link: '/ressources',
+        label: 'Nützliche Links'
+    },
+    {
+        link: '/updategen',
+        label: 'Zwischenstand-Generator'
     },
 ]
 
@@ -34,10 +42,16 @@ function Header() {
         switch (location.pathname) {
             case '/': 
                 return 'HWR Digital Assistant'
-            case '/about': 
-                return 'Über uns'
+            case '/ressources': 
+                return 'Nützliche Links'
             case '/checklist': 
                 return 'PTB Checkliste'
+            case '/ganttgen': 
+                return 'Zeitplan-Generator'
+            case '/updategen': 
+                return 'Zwischenstand-Generator'
+            case '/imprint': 
+                return 'Impressum'
             default:
                 return ''
         }
@@ -64,6 +78,18 @@ function Header() {
                     </ListItem>
                 </NavLink>
             ))}
+            <Divider />
+            <NavLink to='/imprint' style={{ textDecoration: 'none'}}>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemText primary='Impressum' color="text">
+                        </ListItemText>
+                        <IconButton edge="end">
+                                <ChevronRightOutlined />
+                        </IconButton>
+                    </ListItemButton>
+                </ListItem>
+            </NavLink>
         </List>
     </Box>
 
@@ -95,6 +121,12 @@ function Header() {
                                 {item.label}
                             </NavLink>
                         ))}
+                         <NavLink
+                                to='/imprint'
+                                className='p-3 hover:cursor-pointer text-white hover:text-gray-400 no-underline'
+                            >
+                                Impressum
+                            </NavLink>
                     </Box>
 
                 </Toolbar>

@@ -4,9 +4,12 @@ import './index.css';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import HomePage from './Components/HomePage';
-import AboutPage from './Components/AboutPage';
+import UpdateGeneratorPage from './Components/UpdateGeneratorPage';
 import ErrorPage from './Components/ErrorPage';
 import ChecklistPage from './Components/ChecklistPage';
+import RessourcesPage from './Components/RessourcesPage';
+import GanttPage from './Components/GanttPage';
+import ImprintPage from './Components/ImprintPage';
 
 const CustomRouter = createBrowserRouter([
   {
@@ -22,12 +25,24 @@ const CustomRouter = createBrowserRouter([
             index: true
           },
           {
-            path: '/about',
-            element: <AboutPage />,
+            path: '/updategen',
+            element: <UpdateGeneratorPage />,
           },
           {
             path: '/checklist',
             element: <ChecklistPage />,
+          },
+          {
+            path: '/ressources',
+            element: <RessourcesPage />,
+          },
+          {
+            path: '/ganttgen',
+            element: <GanttPage />,
+          },
+          {
+            path: '/imprint',
+            element: <ImprintPage />,
           },
         ]
       }
