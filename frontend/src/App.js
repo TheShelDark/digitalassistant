@@ -12,7 +12,7 @@ function App() {
         <Container sx={{mt: 10, mb: 10}}>
           <Outlet />
         </Container>
-        <Footer />
+        {/*<Footer />*/}
       </ThemeProvider>
     </>
   );
