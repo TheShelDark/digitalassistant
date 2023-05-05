@@ -51,7 +51,7 @@ function HomePage() {
             <div className='flex flex-row mt-5 items-center justify-between'>
                 <Card className='bg-gray-100 w-2/5 justify-center flex flex-row items-center hover:cursor-pointer hover:bg-gray-300'>
                     <CardActionArea>
-                        <CardContent onClick={() => navigate('/checklist')}>
+                        <CardContent onClick={() => navigate('/ressources')}>
                             <Typography variant="h5">Nützliche Links</Typography>
                         </CardContent>
                     </CardActionArea>
@@ -62,7 +62,7 @@ function HomePage() {
             <div className='flex flex-row-reverse mt-5 items-center justify-between'>
                 <Paper className='bg-gray-100 w-1/2 justify-center flex flex-row items-center hover:cursor-pointer hover:bg-gray-300'>
                     <CardActionArea>
-                        <CardContent onClick={() => navigate('/checklist')}>
+                        <CardContent onClick={() => navigate('/updategen')}>
                             <Typography variant="h5">Update-Generator</Typography>
                         </CardContent>
                     </CardActionArea>
